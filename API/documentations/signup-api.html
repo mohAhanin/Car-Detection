@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مستندات API - ثبت نام</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap RTL CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-rtl@5.3.0/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
+  <style>
+    @font-face {
+    font-family: shabnam;
+    src: url("Fonts\\shabnam-font-v5.0.1\\Shabnam.ttf");
+    }
+    @font-face {
+    font-family: shabnam-bold;
+    src: url("Fonts\\shabnam-font-v5.0.1\\Shabnam-Bold.ttf");
+    }
+    body {
+      /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+      font-family: 'shabnam';
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #007bff;
+    }
+    .navbar-brand {
+      color: #fff !important;
+      font-weight: bold;
+    }
+    .api-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .api-section h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .api-section h3 {
+      color: #333;
+      margin-top: 20px;
+    }
+    .code-block {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      margin: 10px 0;
+    }
+    pre, code{
+        unicode-bidi: isolate;
+        direction: ltr !important;
+    }
+    .navbar{
+    width: 100%;
+    height: 85px; /* ارتفاع نوار */
+    background-color: #283060; /* رنگ سفید */
+    position: fixed; /* ثابت کردن نوار در بالای صفحه */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* دکمه در چپ و متن در راست */
+    align-items: center;
+    unicode-bidi: isolate;
+    direction: ltr;
+    }
+    .text{
+    font-family: 'shabnam-bold'; 
+    color: white;
+    font-size: 24px;
+    margin-right: 20px;
+    }
+    .home {
+    font-family: 'shabnam-bold';
+    background-color: white;
+    color: #283060;
+    width: 95px;
+    margin-left: 39px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    text-align: center;
+    display: flex; /* تنظیم دکمه به صورت افقی و عمودی در وسط */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* حذف خط زیر متن */
+    }
+    .navdown{
+    width: 100%;
+    height: 40px; /* ارتفاع نوار */
+    background-color: #283060; /* رنگ سفید */
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between; /* دکمه در چپ و متن در راست */
+    align-items: center;
+    unicode-bidi: isolate;
+    direction: ltr;
+    }
+    .sutech{
+        height: auto;
+        width: 25px;
+        right: 15px;
+        bottom: 8.5px;
+    }
+    .t1{
+        font-family: 'shabnam-bold'; 
+        font-size: 12px;
+        color: white;
+        margin-left: 20px;
+    }
+    .t2{
+        font-family: 'shabnam-bold'; 
+        font-size: 12px;
+        color: white;
+    }
+    .t3{
+        font-family: 'shabnam-bold'; 
+        font-size: 12px;
+        color: white;
+        margin-right: 45px; 
+    }
+    @media (max-width:550px){
+        .t1 , .t2 , .t3{
+            font-size: 10px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">مستندات API</a>
+    </div>
+  </nav> -->
+  <div class="navbar">
+    <a href="#" class="home">خانه</a>
+    <div class="text"><h5>رزرو هوشمند جای پارک</h5></div>
+</div>
+
+  <!-- Main Content -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">مستندات API - ثبت نام</h1>
+
+    <!-- Overview Section -->
+    <div class="api-section">
+      <h2>توضیحات کلی</h2>
+      <p>این API امکان ایجاد حساب کاربری در سیستم را فراهم می‌کند. دو حالت اصلی برای ثبت نام وجود دارد:</p>
+      <ul>
+        <li><strong>ثبت نام مستقیم</strong>: برای کاربرانی که توکن احراز هویت معتبر دارند.</li>
+        <li><strong>درخواست ثبت نام</strong>: برای کاربران عادی که نیاز به بررسی دستی دارند.</li>
+      </ul>
+    </div>
+
+    <!-- Endpoints Section -->
+    <div class="api-section">
+      <h2>Endpointها</h2>
+      <h3>۱. ثبت نام مستقیم</h3>
+      <p><strong>آدرس:</strong> <code>POST /signup/</code></p>
+      <p><strong>توضیح:</strong> این Endpoint برای ثبت نام مستقیم کاربرانی استفاده می‌شود که توکن احراز هویت معتبر دارند.</p>
+
+      <h3>۲. درخواست ثبت نام</h3>
+      <p><strong>آدرس:</strong> <code>POST /request-for-signup/</code></p>
+      <p><strong>توضیح:</strong> این Endpoint برای کاربران عادی است که می‌خواهند درخواست ثبت نام خود را ارسال کنند. این درخواست‌ها پس از ارسال، در سرور ذخیره شده و نیاز به بررسی دستی دارند.</p>
+    </div>
+
+    <!-- Parameters Section -->
+    <div class="api-section">
+      <h2>پارامترهای ورودی</h2>
+      <h3>۱. ثبت نام مستقیم (<code>POST /signup/</code>)</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>پارامتر</th>
+              <th>نوع داده</th>
+              <th>اجباری؟</th>
+              <th>توضیح</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>name</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>نام کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>lastname</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>نام خانوادگی کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>phone-number</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>شماره تلفن کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>car-model</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>مدل خودروی کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>car-color</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>رنگ خودروی کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>car-license-plate</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>شماره پلاک خودروی کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>student-number</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>شماره دانشجویی کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>verification-token</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>توکن احراز هویت معتبر.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>۲. درخواست ثبت نام (<code>POST /request-for-signup/</code>)</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>پارامتر</th>
+              <th>نوع داده</th>
+              <th>اجباری؟</th>
+              <th>توضیح</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>name</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>نام کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>lastname</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>نام خانوادگی کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>phone-number</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>شماره تلفن کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>car-model</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>مدل خودروی کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>car-color</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>رنگ خودروی کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>car-license-plate</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>شماره پلاک خودروی کاربر.</td>
+            </tr>
+            <tr>
+              <td><code>is-a-student</code></td>
+              <td>boolean</td>
+              <td>بله</td>
+              <td>آیا کاربر دانشجو است؟</td>
+            </tr>
+            <tr>
+              <td><code>student-number</code></td>
+              <td>string</td>
+              <td>خیر</td>
+              <td>شماره دانشجویی کاربر (در صورتی که <code>is-a-student</code> true باشد، اجباری است).</td>
+            </tr>
+            <tr>
+              <td><code>organization</code></td>
+              <td>string</td>
+              <td>خیر</td>
+              <td>سازمان مربوطه (در صورتی که <code>is-a-student</code> true باشد، اجباری است).</td>
+            </tr>
+            <tr>
+              <td><code>email</code></td>
+              <td>string</td>
+              <td>بله</td>
+              <td>آدرس ایمیل کاربر.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Sample Requests Section -->
+    <div class="api-section">
+      <h2>نمونه درخواست‌ها</h2>
+      <h3>۱. ثبت نام مستقیم (<code>POST /signup/</code>)</h3>
+      <div class="code-block">
+        <pre>
+{
+  "name": "علی",
+  "lastname": "رضایی",
+  "phone-number": "09123456789",
+  "car-model": "پژو ۲۰۶",
+  "car-color": "سفید",
+  "car-license-plate": "۱۲۳۴۵۶۷۸",
+  "student-number": "۹۸۷۶۵۴۳۲۱",
+  "verification-token": "abc123xyz"
+}
+        </pre>
+      </div>
+
+      <h3>۲. درخواست ثبت نام (<code>POST /request-for-signup/</code>)</h3>
+      <div class="code-block">
+        <pre>
+{
+  "name": "محمد",
+  "lastname": "کریمی",
+  "phone-number": "۰۹۸۷۶۵۴۳۲۱",
+  "car-model": "تیبا",
+  "car-color": "مشکی",
+  "car-license-plate": "۸۷۶۵۴۳۲۱",
+  "is-a-student": true,
+  "student-number": "۱۲۳۴۵۶۷۸۹",
+  "organization": "دانشگاه تهران",
+  "email": "mohammad.karimi@example.com"
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- Sample Responses Section -->
+    <div class="api-section">
+      <h2>نمونه پاسخ‌ها</h2>
+      <h3>پاسخ موفقیت‌آمیز (کد وضعیت ۲۰۰)</h3>
+      <div class="code-block">
+        <pre>
+{
+  "status": "success",
+  "message": "ثبت نام با موفقیت انجام شد.",
+  "user-id": 12345
+}
+        </pre>
+      </div>
+
+      <h3>خطاها</h3>
+      <p><strong>۴۰۰ - پارامترهای نامعتبر</strong></p>
+      <div class="code-block">
+        <pre>
+{
+  "status": "error",
+  "message": "پارامترهای ارسالی نامعتبر هستند."
+}
+        </pre>
+      </div>
+
+      <p><strong>۴۰۹ - حساب کاربری از قبل وجود دارد</strong></p>
+      <div class="code-block">
+        <pre>
+{
+  "status": "error",
+  "message": "حساب کاربری با این مشخصات از قبل وجود دارد."
+}
+        </pre>
+      </div>
+
+      <p><strong>۴۲۲ - مقادیر اجباری خالی هستند</strong></p>
+      <div class="code-block">
+        <pre>
+{
+  "status": "error",
+  "message": "مقادیر اجباری نمی‌توانند خالی باشند."
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- Status Codes Section -->
+    <div class="api-section">
+      <h2>کدهای وضعیت (Status Codes)</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>کد وضعیت</th>
+              <th>توضیح</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>۲۰۰</td>
+              <td>درخواست با موفقیت پردازش شد.</td>
+            </tr>
+            <tr>
+              <td>۴۰۰</td>
+              <td>پارامترهای ارسالی نامعتبر هستند.</td>
+            </tr>
+            <tr>
+              <td>۴۰۹</td>
+              <td>حساب کاربری از قبل وجود دارد.</td>
+            </tr>
+            <tr>
+              <td>۴۲۲</td>
+              <td>مقادیر اجباری خالی هستند.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Authentication Section -->
+    <div class="api-section">
+      <h2>احراز هویت (Authentication)</h2>
+      <ul>
+        <li>برای ثبت نام مستقیم (<code>POST /signup/</code>)، نیاز به ارسال توکن احراز هویت معتبر (<code>verification-token</code>) است.</li>
+        <li>برای درخواست ثبت نام (<code>POST /request-for-signup/</code>)، نیازی به توکن احراز هویت نیست.</li>
+      </ul>
+    </div>
+
+    <!-- Rate Limiting Section -->
+    <div class="api-section">
+      <h2>محدودیت‌ها (Rate Limiting)</h2>
+      <p>هیچ محدودیتی در تعداد درخواست‌ها وجود ندارد.</p>
+    </div>
+  </div>
+
+  <div class="navdown">
+    <div class="t1">تمامی حقوق محفوظ است</div>
+    <div class="t2">Designed with ❤️ by Shahrad Gazni</div>
+    <div class="t3">دانشگاه صنعتی شیراز</div>
+</div>  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
