@@ -11,11 +11,11 @@
   <style>
     @font-face {
     font-family: shabnam;
-    src: url("Fonts\\shabnam-font-v5.0.1\\Shabnam.ttf");
+    src: url("../Fonts/shabnam-font-v5.0.1/Shabnam.ttf");
     }
     @font-face {
     font-family: shabnam-bold;
-    src: url("Fonts\\shabnam-font-v5.0.1\\Shabnam-Bold.ttf");
+    src: url("../Fonts/shabnam-font-v5.0.1/Shabnam-Bold.ttf");
     }
     body {
       /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
@@ -91,21 +91,25 @@
     align-items: center;
     text-decoration: none; /* حذف خط زیر متن */
     }
-    .navdown{
+    .my-cont{
+    position: relative;
     width: 100%;
-    height: 40px; /* ارتفاع نوار */
-    background-color: #283060; /* رنگ سفید */
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between; /* دکمه در چپ و متن در راست */
-    align-items: center;
     unicode-bidi: isolate;
     direction: ltr;
+    }
+    .navdown {
+        width: 100%;
+        height: 40px;
+        background-color: #283060;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .sutech{
         height: auto;
         width: 25px;
+        position: absolute;
         right: 15px;
         bottom: 8.5px;
     }
@@ -141,7 +145,7 @@
     </div>
   </nav> -->
   <div class="navbar">
-    <a href="#" class="home">خانه</a>
+    <a href="../" class="home">خانه</a>
     <div class="text"><h5>رزرو هوشمند جای پارک</h5></div>
 </div>
 
@@ -448,11 +452,14 @@
     </div>
   </div>
 
-  <div class="navdown">
-    <div class="t1">تمامی حقوق محفوظ است</div>
-    <div class="t2">Designed with ❤️ by Shahrad Gazni</div>
-    <div class="t3">دانشگاه صنعتی شیراز</div>
-</div>  
+  <div class="my-cont">
+    <div class="navdown">
+        <div class="t1">تمامی حقوق محفوظ است</div>
+        <div class="t2">Designed with ❤️ by Shahrad Gazni</div>
+        <div class="t3">دانشگاه صنعتی شیراز</div>
+        <img class="sutech" src="../sources/img/sutech.png">
+    </div>
+ </div>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
