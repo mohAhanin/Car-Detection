@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مستندات API - ثبت نام</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap RTL CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-rtl@5.3.0/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
+  <style>
+    @font-face {
+    font-family: shabnam;
+    src: url("Fonts\\shabnam-font-v5.0.1\\Shabnam.ttf");
+    }
+    @font-face {
+    font-family: shabnam-bold;
+    src: url("Fonts\\shabnam-font-v5.0.1\\Shabnam-Bold.ttf");
+    }
+    body {
+      /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+      font-family: 'shabnam';
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #007bff;
+    }
+    .navbar-brand {
+      color: #fff !important;
+      font-weight: bold;
+    }
+    .api-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .api-section h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .api-section h3 {
+      color: #333;
+      margin-top: 20px;
+    }
+    .code-block {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      margin: 10px 0;
+    }
+    pre, code{
+        unicode-bidi: isolate;
+        direction: ltr !important;
+    }
+    .navbar{
+    width: 100%;
+    height: 85px; /* ارتفاع نوار */
+    background-color: #283060; /* رنگ سفید */
+    position: fixed; /* ثابت کردن نوار در بالای صفحه */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* دکمه در چپ و متن در راست */
+    align-items: center;
+    unicode-bidi: isolate;
+    direction: ltr;
+    }
+    .text{
+    font-family: 'shabnam-bold'; 
+    color: white;
+    font-size: 24px;
+    margin-right: 20px;
+    }
+    .home {
+    font-family: 'shabnam-bold';
+    background-color: white;
+    color: #283060;
+    width: 95px;
+    margin-left: 39px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    text-align: center;
+    display: flex; /* تنظیم دکمه به صورت افقی و عمودی در وسط */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* حذف خط زیر متن */
+    }
+    .my-cont{
+    position: relative;
+    width: 100%;
+    unicode-bidi: isolate;
+    direction: ltr;
+    }
+    .navdown {
+        width: 100%;
+        height: 40px;
+        background-color: #283060;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .sutech{
+        height: auto;
+        width: 25px;
+        position: absolute;
+        right: 15px;
+        bottom: 8.5px;
+    }
+    .t1{
+        font-family: 'shabnam-bold'; 
+        font-size: 12px;
+        color: white;
+        margin-left: 20px;
+    }
+    .t2{
+        font-family: 'shabnam-bold'; 
+        font-size: 12px;
+        color: white;
+    }
+    .t3{
+        font-family: 'shabnam-bold'; 
+        font-size: 12px;
+        color: white;
+        margin-right: 45px; 
+    }
+    @media (max-width:550px){
+        .t1 , .t2 , .t3{
+            font-size: 10px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">مستندات API</a>
+    </div>
+  </nav> -->
+  <div class="navbar">
+    <a href="#" class="home">خانه</a>
+    <div class="text"><h5>رزرو هوشمند جای پارک</h5></div>
+</div>
+    <!-- Overview Section -->
+    <div class="container my-5" style="padding-top: 75px;">
+        <h1 class="text-center mb-4">مستندات API - رزرو پارکینگ</h1>
+    
+        <!-- Overview Section -->
+        <div class="api-section">
+          <h2>توضیحات کلی</h2>
+          <p>این API برای مدیریت رزرو جایگاه‌های پارکینگ و تحلیل داده‌های رزرو طراحی شده است. امکانات اصلی شامل:</p>
+          <ul>
+            <li><strong>دریافت اطلاعات جایگاه‌های پارکینگ</strong>: وضعیت رزرو (موجود، رزرو شده توسط کاربر، غیرقابل دسترس) و قیمت.</li>
+            <li><strong>ثبت درخواست رزرو</strong>: ارسال درخواست رزرو و دریافت نتیجه.</li>
+            <li><strong>مدت زمان رزرو</strong>: مشخص کردن مدت زمان رزرو برای کاربر.</li>
+            <li><strong>تحلیل داده‌های رزرو</strong>: گزارش‌هایی از پرکاربردترین و کم‌کاربردترین جایگاه‌ها، روزها و ساعات شلوغ.</li>
+          </ul>
+        </div>
+    
+        <!-- Endpoints Section -->
+        <div class="api-section">
+          <h2>Endpointها</h2>
+    
+          <h3>۱. دریافت اطلاعات جایگاه‌های پارکینگ (<code>GET /parking-spaces/</code>)</h3>
+          <p><strong>توضیح:</strong> این Endpoint برای دریافت اطلاعات تمام جایگاه‌های پارکینگ (تنها یک فضای پارکینگ وجود دارد) و وضعیت رزرو هر کدام استفاده می‌شود. وضعیت‌های ممکن شامل:</p>
+          <ul>
+            <li><code>available</code>: جایگاه خالی و قابل رزرو.</li>
+            <li><code>taken</code>: جایگاه توسط کاربر دیگری رزرو شده است.</li>
+            <li><code>reserved-by-user</code>: جایگاه توسط کاربر جاری رزرو شده است.</li>
+            <li><code>not-available</code>: جایگاه به دلیل ساخت‌وساز غیرقابل دسترس است.</li>
+          </ul>
+          <p>همچنین، قیمت هر جایگاه نیز در پاسخ بازگردانده می‌شود.</p>
+    
+          <h3>۲. ثبت درخواست رزرو (<code>POST /reservations/</code>)</h3>
+          <p><strong>توضیح:</strong> این Endpoint برای ثبت درخواست رزرو یک جایگاه پارکینگ استفاده می‌شود. کاربر باید شناسه جایگاه و مدت زمان رزرو را ارسال کند. نتیجه رزرو (موفقیت یا شکست) پس از پردازش بازگردانده می‌شود. در صورت موفقیت، جایگاه برای مدت زمان مشخص‌شده رزرو می‌شود.</p>
+    
+          <h3>۳. دریافت مدت زمان رزرو (<code>GET /reservations/{id}/duration/</code>)</h3>
+          <p><strong>توضیح:</strong> این Endpoint برای دریافت مدت زمان رزرو یک جایگاه خاص استفاده می‌شود. شناسه جایگاه (<code>id</code>) باید در URL مشخص شود. مدت زمان رزرو بر حسب دقیقه بازگردانده می‌شود.</p>
+    
+          <h3>۴. تحلیل داده‌های رزرو (<code>GET /reservations/analysis/</code>)</h3>
+          <p><strong>توضیح:</strong> این Endpoint برای دریافت گزارش‌های تحلیلی از رزروها استفاده می‌شود. گزارش‌ها شامل:</p>
+          <ul>
+            <li><strong>پرکاربردترین و کم‌کاربردترین جایگاه‌ها</strong>: در هفته، ماه و سال.</li>
+            <li><strong>روزهای هفته، هفته‌های ماه و ماه‌های سال</strong>: با بیشترین و کمترین رزرو.</li>
+            <li><strong>ساعات شلوغ روز</strong>: برای رزرو.</li>
+          </ul>
+          <p>هر گزارش شامل تاریخ دقیق (روز، ماه، سال) و تعداد رزروها است. برای مثال، برای هر هفته، تاریخ شروع و پایان هفته همراه با ماه و سال بازگردانده می‌شود.</p>
+        </div>
+    
+        <!-- Parameters Section -->
+        <div class="api-section">
+          <h2>پارامترهای ورودی</h2>
+    
+          <h3>۱. ثبت درخواست رزرو (<code>POST /reservations/</code>)</h3>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>پارامتر</th>
+                  <th>نوع داده</th>
+                  <th>اجباری؟</th>
+                  <th>توضیح</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>lot-id</code></td>
+                  <td>string</td>
+                  <td>بله</td>
+                  <td>شناسه جایگاه پارکینگ.</td>
+                </tr>
+                <tr>
+                  <td><code>duration</code></td>
+                  <td>number</td>
+                  <td>بله</td>
+                  <td>مدت زمان رزرو (بر حسب دقیقه).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    
+        <!-- Sample Requests Section -->
+        <div class="api-section">
+          <h2>نمونه درخواست‌ها</h2>
+    
+          <h3>۱. ثبت درخواست رزرو (<code>POST /reservations/</code>)</h3>
+          <div class="code-block">
+            <pre>
+    {
+      "lot-id": "lot-001",
+      "duration": 120
+    }
+            </pre>
+          </div>
+        </div>
+    
+        <!-- Sample Responses Section -->
+        <div class="api-section">
+          <h2>نمونه پاسخ‌ها</h2>
+    
+          <h3>۱. دریافت اطلاعات جایگاه‌های پارکینگ (<code>GET /parking-spaces/</code>)</h3>
+          <div class="code-block">
+            <pre>
+    {
+      "parking-space": {
+        "width": 100,
+        "height": 50,
+        "lots": [
+          {
+            "id": "lot-001",
+            "status": "available",
+            "price": 5000,
+            "position": {
+              "x": 10,
+              "y": 20
+            }
+          },
+          {
+            "id": "lot-002",
+            "status": "taken",
+            "price": 5000,
+            "position": {
+              "x": 30,
+              "y": 40
+            }
+          }
+        ]
+      }
+    }
+            </pre>
+          </div>
+    
+          <h3>۲. تحلیل داده‌های رزرو (<code>GET /reservations/analysis/</code>)</h3>
+          <div class="code-block">
+            <pre>
+    {
+      "most-reserved-lots": [
+        {
+          "id": "lot-001",
+          "reservation-count": 50,
+          "period": {
+            "start-date": "2023-10-01",
+            "end-date": "2023-10-07",
+            "month": "October",
+            "year": 2023
+          }
+        }
+      ],
+      "least-reserved-lots": [
+        {
+          "id": "lot-003",
+          "reservation-count": 5,
+          "period": {
+            "start-date": "2023-10-01",
+            "end-date": "2023-10-07",
+            "month": "October",
+            "year": 2023
+          }
+        }
+      ],
+      "busiest-times": [
+        {
+          "day": "شنبه",
+          "date": "2023-10-07",
+          "month": "October",
+          "year": 2023,
+          "hour": "14:00-15:00",
+          "reservation-count": 20
+        }
+      ]
+    }
+            </pre>
+          </div>
+        </div>
+    
+        <!-- Error Messages Section -->
+        <div class="api-section">
+          <h2>پیام‌های خطا</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>کد وضعیت</th>
+                  <th>توضیح</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>۴۰۰</td>
+                  <td>پارامترهای ارسالی نامعتبر هستند.</td>
+                </tr>
+                <tr>
+                  <td>۴۰۴</td>
+                  <td>جایگاه پارکینگ یا رزرو مورد نظر یافت نشد.</td>
+                </tr>
+                <tr>
+                  <td>۴۰۹</td>
+                  <td>جایگاه پارکینگ قبلاً رزرو شده است.</td>
+                </tr>
+                <tr>
+                  <td>۴۲۲</td>
+                  <td>مقادیر اجباری خالی هستند.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    
+        <!-- Rate Limiting Section -->
+        <div class="api-section">
+          <h2>محدودیت‌ها (Rate Limiting)</h2>
+          <p>هیچ محدودیتی در تعداد درخواست‌ها وجود ندارد.</p>
+        </div>
+      </div>
+
+  <div class="my-cont">
+    <div class="navdown">
+        <div class="t1">تمامی حقوق محفوظ است</div>
+        <div class="t2">Designed with ❤️ by Shahrad Gazni</div>
+        <div class="t3">دانشگاه صنعتی شیراز</div>
+        <img class="sutech" src="icon/sutech.png">
+    </div>
+ </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
