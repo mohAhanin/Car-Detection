@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @font-face {
+        font-family: shabnam;
+        src: url("Fonts\\shabnam-font-v5.0.1\\Shabnam.ttf");
+        }
+        @font-face {
+        font-family: shabnam-bold;
+        src: url("Fonts\\shabnam-font-v5.0.1\\Shabnam-Bold.ttf");
+        }
+
+        #it1 {
+            color: white;
+            font-family: 'shabnam-bold';
+            padding-top: 15px;
+        }
+        #it2 {
+            color: white;
+            font-family: 'shabnam';
+            padding-top: 2%;
+        }
+        #reserve2 {
+            color: white;
+            font-family: 'shabnam-bold';
+            /* font-size: 26px; */
+            /* padding-top: 1.2%;
+            padding-bottom: 1.2%; */
+            /* padding-right: 4%;
+            padding-left: 4%; */
+            padding: 1.2% 4%;
+            border-radius: 30px;
+            background-color: #E8BE35;
+        }
+        .viewdocument {
+            color: black !important;
+            font-family: 'shabnam' !important;
+            background-color: #E8BE35 !important;
+            border-radius: 30px !important;
+            padding: 10px 30px !important;
+        }
+        #gt1 {
+            font-family: 'shabnam-bold';
+            color: #283060;
+        }
+        #Friends {
+            padding-top: 85px;
+        }
+        .gh {
+            font-family: 'shabnam-bold';
+            padding-top: 20px;
+            color: #E8BE35;
+        }
+        .fh {
+            font-family: 'shabnam';
+            padding-top: 18px;
+            margin-bottom: 3px !important;
+            /* color: #E8BE35; */
+        }
+        .fm {
+            font-family: 'shabnam';
+            margin-bottom: 3px !important;
+        }
+        .fn {
+            font-family: 'shabnam-bold';
+            padding-right: 15px;
+        }
+        .description {
+            font-family: 'shabnam';
+            color: #283060;
+            max-width: 60%;
+            height: auto;
+            text-align: justify;
+            text-align-last: center;
+            line-height: 32px;
+            margin: 0 auto;
+        }
+        .ah {
+            font-family: 'shabnam-bold';
+            padding-top: 20px;
+            padding-right: 8.5px;
+            margin-bottom: 10px;
+            color: #283060;
+        }
+        .th {
+            font-family: 'shabnam';
+            font-size: 16px;
+            padding-top: 18px;
+            padding-right: 8.5px;
+            margin-bottom: 6px;
+            color: #283060;
+        }
+        .tp {
+            font-family: 'shabnam';
+            font-size: 13px;
+            /* padding-top: 18px; */
+            padding-right: 8.5px;
+            margin-bottom: 4.5px;
+            color: #283060;
+        }
+        .tr {
+            font-family: 'shabnam-bold';
+            font-size: 14px;
+            padding-top: 8px;
+            padding-right: 8.5px;
+            margin-bottom: 4.5px;
+            color: #283060;
+        }
+        .navdown{
+        width: 100%;
+        height: 40px; /* ارتفاع نوار */
+        background-color: #283060; /* رنگ سفید */
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between; /* دکمه در چپ و متن در راست */
+        align-items: center;
+        }
+        .sutech{
+            height: auto;
+            width: 25px;
+            position: fixed;
+            right: 15px;
+            bottom: 8.5px;
+        }    
+        .t1{
+            font-family: 'shabnam-bold'; 
+            font-size: 12px;
+            color: white;
+            margin-left: 20px;
+        }
+        .t2{
+            font-family: 'shabnam-bold'; 
+            font-size: 12px;
+            color: white;
+        }
+        .t3{
+            font-family: 'shabnam-bold'; 
+            font-size: 12px;
+            color: white;
+            margin-right: 45px; 
+        }
+        @media (max-width: 557px) {
+            #it1, #it2 {
+                font-size: 20px !important;
+                /* color: black; */
+            }
+            #reserve2 {
+                font-size: 18px !important;
+            }
+        }
+        @media (max-width: 808px) {
+            .fn {
+                padding-right: 0px;
+                padding-top: 5px;
+            }
+        }
+        @media (max-width: 1230px){
+            /* #it1, #it2, #reserve2 {
+                font-size: 135%;
+            } */
+        }
+    </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="Fonts/shabnam-font-v5.0.1/Shabnam-Medium.ttf" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="Styles/Home.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+    <title>پارکینگ هوشمند - دانشگاه صنعتی شیراز</title>
+</head>
+<body style="max-width: 1920px; margin: 0 auto;">
+    <!-- Navbar -->
+    <div id="navbar" class="container-fluid" style="background-color: #283060;">
+        <div class="row">
+            <p></p>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <!-- <p style="color: white; margin-top: 10px; margin-bottom: 10px; margin-left: 10px;">دالم قب</p> -->
+                <button id="reserve" type="button" class="btn btn-light" style="font-family: 'shabnam-bold'; font-size: larger; margin-top: 10px; margin-bottom: 10px; margin-left: 16px;">رزرو</button>
+            </div>
+            <div class="col-1">
+                <p></p>
+            </div>
+            <div class="col-8">
+                <h5 id="nt1" class="text-start"  style="font-family: 'shabnam-bold'; color: white; margin-right: 16px; padding-top: 18px;">رزرو هوشمند جای پارک</h5>
+            </div>
+        </div>
+        <div class="row">
+            <p></p>
+        </div>
+    </div>
+    <!-- Intro -->
+    <div id="intro" class="container-fluid" style="background-image: url('sources/img/parking\ wallpaper-cropped-edited.png')">
+        <div class="row">
+            <p></p>
+        </div>
+        <div class="row">
+            <p></p>
+        </div>
+        <div class="row text-center">
+            <p id="it1" dir="rtl" class="fs-3">زیر ۳۰ ثانیه جای پارک مورد نظرت رو پیدا کن!</h3>
+        </div>
+        <div class="row text-center">
+            <!-- خیلی سریع، یه جای پارک ایمن داخل دانشگاه برای خودت پیدا کن و با خیال راحت به درس و زندگی برس. -->
+            <p id="it2" dir="rtl" class="fs-3">خیلی سریع، یه جای پارک ایمن داخل دانشگاه برای خودت پیدا کن و با خیال راحت به درس و زندگی برس.</h3>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <p></p>
+            </div>
+            <div class="col-10 text-center" style="padding-top: 2%; padding-bottom: 37px;">
+                <button id="reserve2" dir="rtl" type="button" class="btn fs-4"><span id="reserve2-span">تا دوستات همه جا ها رو رزرو نکردن کلیک کن!</span></button>
+            </div>
+            <div class="col-1">
+                <p></p>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <p></p>
+        </div>
+        <div class="row">
+            <p></p>
+        </div> -->
+    </div>
+    <!-- Guide -->
+     <div id="guide" class="container-fluid">
+        <div class="row text-center" style="padding-top: 30px;">
+            <!-- <div class="col"><p></p></div> -->
+            <div class="col-12"><p id="gt1" dir="rtl" class="fs-3">مراحل رزرو جای پارک دلخواه</p></div>
+            <!-- <div class="col"><p></p></div> -->
+        </div>
+        <div class="row text-center gy-5" style="padding-top: 30px;" dir="rtl">
+            <div class="col-12 col-md-4" style="padding-top: 10px;">
+                <img class="img-fluid" style="width: 68px; height: 68px;" src="Design/login icon.png" />
+                <p class="fs-4 gh">ورود به حساب کاربری</p>
+                <p class="fs-5 description">داخل گزارش ۱۴۵ سیستم گلستان برای هر دانشجو مشخصات حساب کاربری سایت پارکینگ ثبت شده.
+                    کافیه از اونجا اطلاعات رو برداری و بیای اینجا وارد حساب کاربری ات بشی!</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <img class="img-fluid" style="width: 100px; height: 77px;" src="Design/parking lots icon.png"/>
+                <p class="fs-4 gh">مشاهده جایگاه های پارک</p>
+                <p class="fs-5 description">
+                    بلافاصله بعد از ورود، به صفحه رزرو هدایت می شی. از روی نقشه بین جایگاه های موجود، اونی که مدنظرت هست رو انتخاب کن.
+جایگاه های قابل رزرو به رنگ آبی، اونهایی که رزرو شدن زرد و اونی که تو رزرو میکنی به رنگ سبز در میاد.
+                </p>
+            </div>
+            <div class="col-12 col-md-4" style="padding-top: 10px;">
+                <img class="img-fluid" style="width: 68px; height: 68px;" src="Design/Selectecd icon.png" />
+                <p class="fs-4 gh">تایید نهایی و رزرو</p>
+                <p class="fs-5 description">
+                    وقتی جایگاه پارک رو انتخاب میکنی، یک پنجره کوچیک باز میشه و با زدن دکمه تایید، به صورت اتوماتیک هزینه از موجودی حسابت برداشته شده و رسید رزرو موفق بهت نشون داده میشه تا بتونی ذخیرش کنی!
+                </p>
+            </div>
+        </div>
+     </div>
+     <!-- Friends -->
+    <div id="Friends" class="container-fluid" dir="rtl">
+        <div class="row text-center">
+            <div class="col-12">
+                <div class="btn fs-4" style="color: white; background-color: #283060; font-family: 'shabnam-bold'; border-radius: 30px; padding-top: 20px; padding-bottom: 20px; padding-left: 40px; padding-right: 40px;">ببینیم دوستان چه نظری دارن!</div>
+            </div>
+        </div>
+        <div class="row text-center gx-1 gy-5" style="padding-top: 65px;">
+            <div class="col-12 col-md-3">
+                <img class="img-fluid" style="width: 202px; height: 202px;" src="Design/Behrad Roshanrad.png"/>
+                <p class="fs-5 fh">بهراد روشن راد</p>
+                <p class="fs-6 fm">کارشناسی مهندسی کامپیوتر</p>
+                <p class="fs-6 fm">دانشگاه صنعتی شیراز</p>
+                <p class="fs-6 description" style="font-family: 'shabnam-bold'; padding-top: 10px; color: black; text-align-last: right;">صبح اگر یکم دیر میرسیدم باید کلی دنبال جای پارک می گشتم، حالا از عصر روز قبل جا رو رزرو میکنم و صبح بدون معطلی برای گشتن میام پارک میکنم.</p>
+            </div>
+            <div class="col-12 col-md-3">
+                <img class="img-fluid" style="width: 202px; height: 202px;" src="Design/Ali Hajeb.png"/>
+                <p class="fs-5 fh">علی حاجب</p>
+                <p class="fs-6 fm">کارشناسی مهندسی کامپیوتر</p>
+                <p class="fs-6 fm">دانشگاه صنعتی شیراز</p>
+                <p class="fs-6 description" style="font-family: 'shabnam-bold'; padding-top: 10px; color: black; text-align-last: right;">من خوابگاهی هستم و اکثرا مشکلی با جای پارک ندارم جز ایام امتحانات! این که اولویت روزانه با دانشجویانی هست که همون روز امتحان دارن عالیه.</p>
+            </div>
+            <div class="col-12 col-md-3">
+                <img class="img-fluid" style="width: 202px; height: 202px;" src="Design/Sobhan Mohammadi.png"/>
+                <p class="fs-5 fh">سبحان محمدی</p>
+                <p class="fs-6 fm">کارشناسی مهندسی عمران</p>
+                <p class="fs-6 fm">دانشگاه آزاد اسلامی واحد صدرا</p>
+                <p class="fs-6 description" style="font-family: 'shabnam-bold'; padding-top: 10px; color: black; text-align-last: right;">برای دوره ها و کارگاه های انجمن های علمی بعضی وقت ها میام دانشگاه صنعتی. خوبه که میتونم به صورت موقت جای پارکی رو رزرو کنم و خیالم از ماشینم راحت باشه.</p>
+            </div>
+            <div class="col-12 col-md-3">
+                <img class="img-fluid" style="width: 202px; height: 202px;" src="Design/Pointing finger.png"/>
+                <p class="fs-5 fh">خودت!</p>
+                <p class="fs-6 fm">مقطع تحصیلی خودت</p>
+                <p class="fs-6 fm">دانشگاهی که هستی</p>
+                <p class="fs-6 description" style="font-family: 'shabnam-bold'; padding-top: 10px; color: black; text-align-last: right;">با یکبار رزرو کردن میتونی نظرت رو ثبت کنی. اگر یه بازخورد کامل برامون بنویسی رزرو بعدیت رو مهمون مایی!</p>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 40px;" dir="rtl">
+            <div class="col-1"><p></p></div>
+            <div class="col-10">
+                <div style="width: 100%; background-color: #E8BE35; padding: 25px 30px; border-radius: 30px; color: #283060;">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <img class="img-fluid" style="width: 56px; height: 56px;" src="Design/users.png" />
+                            <p class="fs-4 fn d-inline-block" >کاربران این وب سایت فقط دانشجو های خودمون نیستن!</p>
+                            <p class="fs-6" style="font-family: 'shabnam'; margin-bottom: 0px; text-align: justify; line-height: 32px;">اگر کار اداری ای تو دانشگاه داری (مثل درخواست مهمانی) یا میخوای دوره ها و کارگاه ها رو شرکت کنی، با ایجاد حساب کاربری و آپلود و وارد کردن اطلاعاتت برای دانشگاه درخواست
+                                میذاری تا بررسیش کنن و در صورتی که از موارد بالا باشه، به صورت موقت میتونی داخل دانشگاه جای پارک رزرو کنی!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"><p></p></div>
+        </div>
+        </div>
+    </div>
+    <!-- API -->
+    <div class="container-fluid" dir="rtl" style="padding-top: 85px;">
+        <div class="row text-center">
+            <div class="col-12"><div class="btn fs-4" style="color: white; background-color: #283060; font-family: 'shabnam-bold'; border-radius: 20px; padding: 15px 30px;">API عملکرد های اصلی سامانه</div></div>
+        </div>
+        <div class="row text-center gx-1 gy-5" style="padding-top: 70px;">
+            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 115px; height: 70px;" src="Design/sign-up main blue.png"/><p class="fs-5 ah">ثبت نام</p><button type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
+            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 70px; height: 70px;" src="Design/Account white.png"/><p class="fs-5 ah">ورود به حساب</p><button type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
+            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 91px; height: 70px;" src="Design/parking lots icon.png"/><p class="fs-5 ah">اطلاعات جایگاه ها</p><button type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
+            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 70px; height: 70px;" src="Design/Selectecd icon.png"/><p class="fs-5 ah">رزرو جایگاه</p><button type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
+        </div>
+    </div>
+    <!-- TEAM -->
+     <div class="container-fluid" dir="rtl" style="padding-top: 85px; padding-bottom: 40px;">
+        <div class="row text-center">
+            <div class="col-12"><div class="btn fs-4" style="color: white; background-color: #283060; font-family: 'shabnam-bold'; border-radius: 20px; padding: 15px 30px;">تیم توسعه</div></div>
+        </div>
+        <div class="row text-center gy-5" style="padding-top: 55px;">
+            <div class="col-12 col-md-3">
+                <img class="img-fluid" style="width: 202px; height: 202px;" src="Design/DrRezaee.png"/>
+                <p class="th">دکتر محمد صادق رضایی</p>
+                <p class="tp">عضو هیئت علمی دانشگاه صنعتی شیراز</p>
+                <p class="tp">سرپرست مدیریت امور اداری و پشتیبانی دانشگاه</p>
+                <p class="tr">استاد راهنمای پروژه</p>
+            </div>
+            <div class="col-12 col-md-3">
+                <img class="img-fluid" style="width: 202px; height: 202px;" src="Design/Shahrad.png"/>
+                <p class="th">شهراد گزنی</p>
+                <p class="tp">دانشجوی کارشناسی مهندسی کامپیوتر</p>
+                <p class="tp">دانشگاه صنعتی شیراز</p>
+                <p class="tr">توسعه دهنده وب سایت (فرانت - بک - API)</p>
+                <p class="tr" style="padding-top: 0px !important;">طراحی UI/UX</p>
+            </div>
+            <div class="col-12 col-md-3">
+                <img class="img-fluid" style="width: 202px; height: 202px;" src="Design/Diacko.png"/>
+                <p class="th">محمد مهدی معتمدی</p>
+                <p class="tp">دانشجوی کارشناسی مهندسی کامپیوتر</p>
+                <p class="tp">دانشگاه صنعتی شیراز</p>
+                <p class="tr">طراح مدل تجاری</p>
+            </div>
+            <div class="col-12 col-md-3">
+                <img class="img-fluid" style="width: 202px; height: 202px;" src="Design/Chad.png"/>
+                <p class="th">محمد امین آهنین</p>
+                <p class="tp">دانشجوی کارشناسی مهندسی کامپیوتر</p>
+                <p class="tp">دانشگاه صنعتی شیراز</p>
+                <p class="tr">متخصص علم داده</p>
+            </div>
+        </div>
+     </div>
+     <!-- Footer -->
+     <div class="navdown">
+        <div class="t1">تمامی حقوق محفوظ است</div>
+        <div class="t2">Designed with ❤️ by Shahrad Gazni</div>
+        <div class="t3">دانشگاه صنعتی شیراز</div>
+    </div>
+    <script>
+        document.getElementById('reserve').addEventListener('click', function(){
+            window.location.href = 'login'
+        });
+        document.getElementById('reserve2').addEventListener('click', function(){
+            window.location.href = 'login'
+        });
+    </script>
+</body>
+</html>
