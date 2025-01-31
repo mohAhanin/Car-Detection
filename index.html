@@ -316,10 +316,10 @@
             <div class="col-12"><div class="btn fs-4" style="color: white; background-color: #283060; font-family: 'shabnam-bold'; border-radius: 20px; padding: 15px 30px;">API عملکرد های اصلی سامانه</div></div>
         </div>
         <div class="row text-center gx-1 gy-5" style="padding-top: 70px;">
-            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 115px; height: 70px;" src="sources/img/sign-up main blue.png"/><p class="fs-5 ah">ثبت نام</p><button type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
-            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 70px; height: 70px;" src="sources/img/Account white.png"/><p class="fs-5 ah">ورود به حساب</p><button type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
-            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 91px; height: 70px;" src="sources/img/parking lots icon.png"/><p class="fs-5 ah">اطلاعات جایگاه ها</p><button type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
-            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 70px; height: 70px;" src="sources/img/Selectecd icon.png"/><p class="fs-5 ah">رزرو جایگاه</p><button type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
+            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 115px; height: 70px;" src="sources/img/sign-up main blue.png"/><p class="fs-5 ah">ثبت نام</p><button id="view-signup-api" type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
+            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 70px; height: 70px;" src="sources/img/Account white.png"/><p class="fs-5 ah">ورود به حساب</p><button id="view-login-api" type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
+            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 91px; height: 70px;" src="sources/img/parking lots icon.png"/><p class="fs-5 ah">اطلاعات جایگاه ها</p><button id="view-parkinglots-api" type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
+            <div class="col-12 col-md-3"><img class="img-fluid" style="width: 70px; height: 70px;" src="sources/img/Selectecd icon.png"/><p class="fs-5 ah">رزرو جایگاه</p><button id="view-reserve-api" type="button" class="btn fs-5 viewdocument">مشاهده مستندات</button></div>
         </div>
     </div>
     <!-- TEAM -->
@@ -372,6 +372,19 @@
         document.getElementById('reserve2').addEventListener('click', function(){
             window.location.href = 'login'
         });
+        document.getElementById('view-signup-api').addEventListener('click', function(){
+            window.location.href = '/API/documentations/signup-api.html'
+        });
+        document.getElementById('view-login-api').addEventListener('click', function(){
+            window.location.href = '/API/documentations/login-api.html'
+        });
+        document.getElementById('view-parkinglots-api').addEventListener('click', function(){
+            window.location.href = '/API/documentations/parking-lots-api.html'
+        });
+        document.getElementById('view-reserve-api').addEventListener('click', function(){
+            window.location.href = '/API/documentations/reservation-api.html'
+        });
+        
     </script>
 </body>
 </html>
