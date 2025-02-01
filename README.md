@@ -34,7 +34,7 @@ The project is divided into three main phases:
 
 Below are some images showcasing our **Car Detection System** in action:
 
-![Car Detection 1](path_to_image1.jpg)
+![Car Detection 1]([path_to_image1.jpg](https://github.com/mohAhanin/e-commerce-project-sutech/blob/main/Car%20Detection%20-%20Computer%20Vision/output1.png))
 ![Car Detection 2](path_to_image2.jpg)
 
 ## How to Run the Project
