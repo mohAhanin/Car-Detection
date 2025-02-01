@@ -107,23 +107,28 @@
             margin-bottom: 4.5px;
             color: #283060;
         }
-        .navdown{
-        width: 100%;
-        height: 40px; /* ارتفاع نوار */
-        background-color: #283060; /* رنگ سفید */
-        bottom: 0;
-        left: 0;
-        display: flex;
-        justify-content: space-between; /* دکمه در چپ و متن در راست */
-        align-items: center;
+        .my-cont{
+            position: relative;
+            width: 100%;
+            unicode-bidi: isolate;
+            direction: ltr;
+        }
+        .navdown {
+            width: 100%;
+            height: 40px;
+            background-color: #283060;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .sutech{
             height: auto;
             width: 25px;
-            position: fixed;
+            position: absolute;
             right: 15px;
             bottom: 8.5px;
-        }    
+        }
         .t1{
             font-family: 'shabnam-bold'; 
             font-size: 12px;
@@ -140,6 +145,11 @@
             font-size: 12px;
             color: white;
             margin-right: 45px; 
+        }
+        @media (max-width:550px){
+            .t1 , .t2 , .t3{
+                font-size: 10px;
+            }
         }
         @media (max-width: 557px) {
             #it1, #it2 {
@@ -360,10 +370,18 @@
         </div>
      </div>
      <!-- Footer -->
-     <div class="navdown">
+<!--      <div class="navdown">
         <div class="t1">تمامی حقوق محفوظ است</div>
         <div class="t2">Designed with ❤️ by Shahrad Gazni</div>
         <div class="t3">دانشگاه صنعتی شیراز</div>
+    </div> -->
+    <div class="my-cont">
+    <div class="navdown">
+        <div class="t1">تمامی حقوق محفوظ است</div>
+        <div class="t2">Designed with ❤️ by Shahrad Gazni</div>
+        <div class="t3">دانشگاه صنعتی شیراز</div>
+            <img class="sutech" src="../sources/img/sutech.png">
+        </div>
     </div>
     <script>
         document.getElementById('reserve').addEventListener('click', function(){
