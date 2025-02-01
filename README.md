@@ -6,9 +6,9 @@ This repository contains the implementation of the **Smart Parking System** proj
 
 This project was implemented by:
 
-- [[Shahrad Gazni](https://github.com/Shahrad-Puver)]  
-- [[Mohammadamin Ahanin](https://github.com/mohAhanin)]  
-- [[Mohammadmahdi Motamedi](https://github.com/Diacko242)]  
+- [Shahrad Gazni](https://github.com/Shahrad-Puver)  
+- [Mohammadamin Ahanin](https://github.com/mohAhanin)  
+- [Mohammadmahdi Motamedi](https://github.com/Diacko242)  
 
 Under the supervision of **Professor Mohammad Sadegh Rezaei**.
 
@@ -18,12 +18,11 @@ The project is divided into three main phases:
 
 1. **Web App Development**  
    - Developed a web-based platform for parking reservation.
-   - Built using **ASP.NET Core** for backend and **Vue.js** for frontend.
    - Features include user authentication, real-time availability tracking, and reservation management.
 
 2. **Image Processing (Car Detection)**  
    - Implemented a **car detection system** using computer vision techniques.
-   - Utilized **OpenCV** and **deep learning models** to detect and recognize vehicles in parking areas.
+   - Utilized **OpenCV** to detect and recognize vehicles in parking areas.
    - Integrated with the web app for automated parking space allocation.
 
 3. **Business Model**  
@@ -34,39 +33,8 @@ The project is divided into three main phases:
 
 Below are some images showcasing our **Car Detection System** in action:
 
-![Car Detection 1]([https://github.com/mohAhanin/e-commerce-project-sutech/blob/main/Car%20Detection%20-%20Computer%20Vision/output1.png])
-![Car Detection 2](path_to_image2.jpg)
-
-## How to Run the Project
-
-1. **Clone the Repository**
-   ```sh
-   git clone https://github.com/your-repo-url.git
-   cd your-repo-name
-   ```
-
-2. **Backend Setup** (JS)
-   ```sh
-   cd backend
-   dotnet build
-   dotnet run
-   ```
-
-3. **Frontend Setup** (Vue.js)
-   ```sh
-   cd frontend
-   npm install
-   npm run serve
-   ```
-
-4. **Running the Car Detection Model**
-   ```sh
-   python car_detection.py
-   ```
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+![Car Detection 1](https://github.com/mohAhanin/e-commerce-project-sutech/blob/main/Car%20Detection%20-%20Computer%20Vision/output1.png)
+![Car Detection 2](https://github.com/mohAhanin/e-commerce-project-sutech/blob/main/Car%20Detection%20-%20Computer%20Vision/output2.png)
 
 ---
 
