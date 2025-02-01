@@ -3,7 +3,7 @@ var users = [['gazni.shahrad@gmail.com', 'smartprogrammer'], ['shahrad', 'smartp
 submit_button.addEventListener('click', function() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
-  users.foreach((value, index) => {
+  users.forEach((value, index) => {
     let _username = value[0];
     let _password = value[1];
     if(username == _username && password == _password){
