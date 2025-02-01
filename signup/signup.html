@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body style="background-color: #283060;">
+    <div class="navbar">
+        <a href="#" class="home">خانه</a>
+        <div class="text"><h5>رزرو هوشمند جای پارک</h5></div>
+    </div>
+    <div class="navdown">
+        <div class="t1">تمامی حقوق محفوظ است</div>
+        <div class="t2">Designed with ❤️ by Shahrad Gazni</div>
+        <div class="t3">دانشگاه صنعتی شیراز</div>
+    </div>
+    <img class="sutech" src="icon/sutech.png">
+    <div class="container">
+        <div class="box">
+
+            <img src="icon/signup.png" alt="ثبت نام" class="signup">
+
+            <h2>حساب کاربری جدید</h2>
+
+            <form action="POST">
+                <input type="text" placeholder="نام و نام خانوادگی" class="input-field" required>
+                <input type="password" placeholder="شماره تلفن همراه" class="input-field" required>
+                <input type="email" placeholder="آدرس ایمیل" class="input-field" required>
+                <input type="text" placeholder="(LX پژو 206 - پراید 111 - سمند) مدل ماشین" class="input-field" required>
+                <input type="text" placeholder="رنگ خودرو (سفید - نوک مدادی - بژ - نقره ای)" class="input-field" required>
+                <input type="text" placeholder="پلاک خودرو (۱۲ الف ۳۴۵)" class="input-field" required>
+
+                <p>آیا دانشجو هستید؟</p>
+                
+                <input type="radio" id="yes" name="student" value="yes">
+                <label for="yes" >بله</label>
+                <input type="radio" id="no" name="student" value="no">
+                <label for="no">خیر</label>
+                
+                <input type="text" placeholder="شماره دانشجویی" class="student-fields" required>
+                <input type="text" placeholder="دانشگاه/موسسه" class="student-fields" required>
+
+                <div><button class="signup-btn">ثبت نام</button></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>            
