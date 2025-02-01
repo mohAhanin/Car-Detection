@@ -8,7 +8,7 @@ This project was implemented by:
 
 - [[Shahrad Gazni](https://github.com/Shahrad-Puver)]  
 - [[Mohammadamin Ahanin](https://github.com/mohAhanin)]  
-- [Mohammadmahdi Motamedi](#)  
+- [[Mohammadmahdi Motamedi](https://github.com/Diacko242)]  
 
 Under the supervision of **Professor Mohammad Sadegh Rezaei**.
 
