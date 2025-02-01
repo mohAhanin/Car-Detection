@@ -8,7 +8,7 @@ submit_button.addEventListener('click', function() {
     let _username = value[0];
     let _password = value[1];
     if(username == _username && password == _password){
-      sucess = true;
+      success = true;
       break;
     }
   });
