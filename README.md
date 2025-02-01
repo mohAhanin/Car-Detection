@@ -6,8 +6,8 @@ This repository contains the implementation of the **Smart Parking System** proj
 
 This project was implemented by:
 
-- [[Shahrad Gazni](https://github.com/Shahrad-Puver)](#)  
-- [Mohammadamin Ahanin](#)  
+- [[Shahrad Gazni](https://github.com/Shahrad-Puver)]  
+- [[Mohammadamin Ahanin](https://github.com/mohAhanin)]  
 - [Mohammadmahdi Motamedi](#)  
 
 Under the supervision of **Professor Mohammad Sadegh Rezaei**.
